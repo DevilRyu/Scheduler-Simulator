@@ -1,10 +1,10 @@
 # Scheduler-Simulator
 Este proyecto consiste en una serie de programas que tienen como fin llevar a cabo una simulación de como es el agendamiento de procesos en un computador, los algoritmos de agendamiento usados fueron: FCFS, SJF, RR. Y los programas implementados son:
 
-* schedgen: programa cuyo fin es generar un archivo con los datos necesarios (time arrive, time burst) para llevar a cabo la simulación.
-* schedsim: es el motor de simulación, este programa realiza todo el proceso de encolamiento e interrución de procesos y muestra como va la ejecución de manera detallada, utiliza programación en paralelo mediante el uso de hilos.
-* schedstadistcs: usa el motor de antes mencionado pero a diferencia del anterior este programa ejecuta 4 simulaciones al mismo tiempo con los algoritmos de rr1, rr4, sfj, fcfs; por lo que usa programación concurrente mediante procesos y como resultado genera 3 archivos con datos estadísticos para su posterior procesamiento.
-* plotter: este programa toma los archivos del programa anterior para realizar su procesamiento y graficación mediante la librería matplotlib.
+* ./schedgen: programa cuyo fin es generar un archivo con los datos necesarios (time arrive, time burst) para llevar a cabo la simulación.
+* ./schedsim: es el motor de simulación, este programa realiza todo el proceso de encolamiento e interrución de procesos y muestra como va la ejecución de manera detallada, utiliza programación en paralelo mediante el uso de hilos.
+* ./schedstadistcs: usa el motor de antes mencionado pero a diferencia del anterior este programa ejecuta 4 simulaciones al mismo tiempo con los algoritmos de rr1, rr4, sfj, fcfs; por lo que usa programación concurrente mediante procesos y como resultado genera 3 archivos con datos estadísticos para su posterior procesamiento.
+* ./plotter: este programa toma los archivos del programa anterior para realizar su procesamiento y graficación mediante la librería matplotlib.
 
 En la siguiente sección se explicará más a detalle cada uno de los programas mencionados.
 
