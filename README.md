@@ -2,7 +2,7 @@
 Aplicación cliente - servidor grupo de chat encriptado usando serialización CBOR y encriptación AES256.
 
 ## Modo de uso y compilación
-Para poder compilar el programa es necesario ante todo introducir el comando                                                          
+/*Para poder compilar el programa es necesario ante todo introducir el comando                                                          
 ```
 make
 ```
@@ -61,7 +61,7 @@ Para que un usuario se conecte se usa:
 ```
 ./chat_client -u <nombre_usuario> -p <contraseña> <ip> <puerto>
 ```
-Cada vez que un cliente se conecta se anuncia esa notificación en los usuarios ya conectados                                               
+Cada vez que un cliente se conecta se anuncia esa notificación en los usuarios ya conectados */                                              
 
 ## Realizador por:                                                                                                    
 * Diego Muñoz     
