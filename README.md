@@ -60,7 +60,26 @@ El cual generara 3 archivos ejecutables correspondientes a sus archivos.c dentro
    ```
   ./build/schedgen schedstimes.dat q 4                                                                                                             
   ```
+  Y una posible salida para la ejecución de este programa suponiendo que el algoritmo a ejecutar es SJF con el siguiente dataset es:
+  ```
+  0 3
+  2 6 
+  4 4
+  6 5
+  8 2
+  ```
+  ```
+  1: runs 0-3 -> end = 3, (arr = 0), turn = 3, (burst = 3), wait = 0
+  2: runs 3-4
+  3: runs 4-8 -> end = 8, (arr = 4), turn = 4, (burst = 4), wait = 0
+  5: runs 8-10 -> end = 10, (arr = 8), turn = 2, (burst = 2), wait = 0
+  2: runs 10-15 -> end= 15, (arr = 2), turn = 13, (burst = 6), wait = 7
+  4: runs 15-20 -> end= 20, (arr = 6), turn = 14, (burst = 5), wait = 9 
   
+  Average turnaround time = 7.20
+  Average normalized turnaround time = 1.59
+  Average waiting time = 3.20
+  ```
 <!--Si se requiere ayuda y saldrá un mensaje como este:
 ```
 chat_server distributes encrypted chat messages between connected clients.
