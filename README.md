@@ -127,8 +127,11 @@ El cual generara 3 archivos ejecutables correspondientes a sus archivos.c dentro
    python3 ploter.py
   ```
   Las gráficas generadas por este programa tienen el mismo nombre que los archivos que alimentan la data de gráficación, salvo que llevan la extención **.jpeg**. Algunas de las imágenes generadas por este programa lucen de la siguiente manera:
+  * **Tiempos de retorno vs Burst time de procesos agrupados**
   ![Tiempos de retorno vs Burst time de procesos agrupados](https://github.com/DevilRyu/Scheduler-Simulator/blob/master/schedturns.jpeg)
+  * **Tiempos de retorno normalizados vs Burst time de procesos agrupados**
   ![Tiempos de retorno normalizados vs Burst time de procesos agrupados](https://github.com/DevilRyu/Scheduler-Simulator/blob/master/schednturns.jpeg)
+  * **Tiempos de espera vs Burst time de procesos agrupados**
   ![Tiempos de espera vs Burst time de procesos agrupados](https://github.com/DevilRyu/Scheduler-Simulator/blob/master/schedwaits.jpeg)
 
 ## Realizador por:                                                                                                    
