@@ -116,7 +116,7 @@ El cual generara 3 archivos ejecutables correspondientes a sus archivos.c dentro
 * El cuarto y último programa denominado **ploter.py** corresponde a un graficador de datos estadíticos, que a diferencia de los otros programas esta hecho en python y usa la librería de gráficación matplotlib, este programa no recibe ningún tipo de argumento, pero es necesario que los archivos que vaya a emplear para gráficar se encuentren en su mismo directorio y tengan los siguientes nombres:
   * **schedturns.dat** (Para realizar la gráfica de los tiempos de retorno vs burst time de procesos agrupados).
   * **schednturns.dat** (Para realizar la gráfica de los tiempos de retorno normalizados vs burst time de procesos agrupados).
-  * **schedwaits.dat** (Para realizar la gráfica de los tiempos de espera normalizados vs burst time de procesos agrupados)
+  * **schedwaits.dat** (Para realizar la gráfica de los tiempos de espera vs burst time de procesos agrupados)
  Como se menciono este programa emplea la librería matplotlib y por lo tanto el interprete de Python 3.x.x. En caso de no tener dicha librería se debe instalar mediante los siguientes comandos en la terminal:
   ```
   python3 -m pip install -U pip
@@ -127,8 +127,12 @@ El cual generara 3 archivos ejecutables correspondientes a sus archivos.c dentro
    python3 ploter.py
   ```
   Las gráficas generadas por este programa tienen el mismo nombre que los archivos que alimentan la data de gráficación, salvo que llevan la extención **.jpeg**. Algunas de las imágenes generadas por este programa lucen de la siguiente manera:
-  
-                                             
+  ![Tiempos de retorno vs Burst time de procesos agrupados]
+  (https://github.com/DevilRyu/Scheduler-Simulator/blob/master/schedturns.jpeg)
+  ![Tiempos de retorno normalizados vs Burst time de procesos agrupados]
+  (https://github.com/DevilRyu/Scheduler-Simulator/blob/master/schednturns.jpeg)
+  ![Tiempos de espera vs Burst time de procesos agrupados]
+  (https://github.com/DevilRyu/Scheduler-Simulator/blob/master/schedwaits.jpeg)
 
 ## Realizador por:                                                                                                    
 * Diego Muñoz     
