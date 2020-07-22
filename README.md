@@ -10,13 +10,13 @@ En la siguiente sección se explicará más a detalle cada uno de los programas 
 
 
 ## Modo de uso y compilación
-<!--Para poder compilar el programa es necesario ante todo introducir el comando                                                          
+Para poder compilar los programas realizados en C es necesario introducir en la terminal el siguiente comando:                                                       
 ```
 make
 ```
 Se debe tener una terminal para el servidor y dos o más para cliente;                                                               
 En el **servidor** se debe introducir:
-```
+<!--```
 ./chat_server –h                                                                                                                 
 ```
 Si se requiere ayuda y saldrá un mensaje como este:
