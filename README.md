@@ -14,12 +14,30 @@ Para poder compilar los programas realizados en C es necesario introducir en la 
 ```
 make
 ```
-Se debe tener una terminal para el servidor y dos o más para cliente;                                                               
-En el **servidor** se debe introducir:
-<!--```
-./chat_server –h                                                                                                                 
-```
-Si se requiere ayuda y saldrá un mensaje como este:
+El cual generara 3 archivos ejecutables correspondientes a sus archivos.c dentro de la carpeta build.
+* El primer programa denominado **schedgen** consiste en un generador de datos de pruebas para el simulador de agendamiento de procesos , estos datos son escritos en un archivo   que tiene un formato especifico que es el siguiente:
+  ```
+  0 2
+  0 5 
+  5 7
+  .
+  .
+  .
+  8 10
+  ```
+  Donde la primera columna indica el tiempo de arribo de los procesos y la segunda columna su burst time, por lo tanto cada fila corresponde a un único proceso.
+  
+  Para ejecutar el programa denominado **schedgen** se debe introducir el comando:
+  ```
+  ./build/schedgen d f1 f2 filename                                                                                                               
+  ```
+  El cual consta de 4 banderas, las cuales representan lo explicado a continuación:
+  * **d:** es un número entero que le indica al programa cuantos datos de prueba debe generar.
+  * **f1:** es un número decimal que le indica al programa la frecuencia con la que los datos de prueba(procesos) arribaran.
+  * **f2:** es un número decimal que le indica al programa la distribución del burst time de los procesos.
+  * **filename:** es una cadena de caácteres que le indica al programa como se llamará el archivo que contenga los datos de prueba.
+  
+<!--Si se requiere ayuda y saldrá un mensaje como este:
 ```
 chat_server distributes encrypted chat messages between connected clients.
 
