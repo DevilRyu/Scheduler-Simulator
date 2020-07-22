@@ -112,93 +112,23 @@ El cual generara 3 archivos ejecutables correspondientes a sus archivos.c dentro
   * La tercera fila corresponde a los datos relacionados a alguno de los indicadores estadísticos correspondientes al algoritmo de RR1 vinculados a la agrupación de procesos de la primera fila.
   * La cuarta fila corresponde a los datos relacionados a alguno de los indicadores estadísticos correspondientes al algoritmo de RR4 vinculados a la agrupación de procesos de la primera fila.
   * La quinta fila corresponde a los datos relacionados a alguno de los indicadores estadísticos correspondientes al algoritmo de SJF vinculados a la agrupación de procesos de la primera fila.
-   
-  <!--Este programa consta principalmente de 2 paramentros obligatorios en cualquier ejecución que son:
-  * **filename:** es una cadena de cácteres que le indica al programa que dataset de prueba usará para su simulación.
-  * **algoritmo:** es una cadena de cácteres que le indica al programa que algoritmo de agendamiento de procesos usar.
-  El tercer párametro es obligatorio, si y solo si, el algoritmo de agendamiento escogido es Round Robin:
-  * **q:** es un número entero que le indica al programa el valor que tendrá el quantum al momento de realizar la simulación.
-  Un ejemplo por cada uno de las posibilidades de ejecución del programa sería:
-   ```
-  ./build/schedgen schedstimes.dat fcfs                                                                                                       
-  ```
-   ```
-  ./build/schedgen schedstimes.dat sjf                                                                                                              
-  ```
-   ```
-  ./build/schedgen schedstimes.dat q 4                                                                                                             
-  ```
-  Y una posible salida para la ejecución de este programa suponiendo que el algoritmo a ejecutar es SJF con el siguiente dataset es:
-  ```
-  0 3
-  2 6 
-  4 4
-  6 5
-  8 2
-  ```
-  ```
-  1: runs 0-3 -> end = 3, (arr = 0), turn = 3, (burst = 3), wait = 0
-  2: runs 3-4
-  3: runs 4-8 -> end = 8, (arr = 4), turn = 4, (burst = 4), wait = 0
-  5: runs 8-10 -> end = 10, (arr = 8), turn = 2, (burst = 2), wait = 0
-  2: runs 10-15 -> end= 15, (arr = 2), turn = 13, (burst = 6), wait = 7
-  4: runs 15-20 -> end= 20, (arr = 6), turn = 14, (burst = 5), wait = 9 
   
-  Average turnaround time = 7.20
-  Average normalized turnaround time = 1.59
-  Average waiting time = 3.20
+* El cuarto y último programa denominado **ploter.py** corresponde a un graficador de datos estadíticos, que a diferencia de los otros programas esta hecho en python y usa la librería de gráficación matplotlib, este programa no recibe ningún tipo de argumento, pero es necesario que los archivos que vaya a emplear para gráficar se encuentren en su mismo directorio y tengan los siguientes nombres:
+  * **schedturns.dat** (Para realizar la gráfica de los tiempos de retorno vs burst time de procesos agrupados).
+  * **schednturns.dat** (Para realizar la gráfica de los tiempos de retorno normalizados vs burst time de procesos agrupados).
+  * **schedwaits.dat** (Para realizar la gráfica de los tiempos de espera normalizados vs burst time de procesos agrupados)
+ Como se menciono este programa emplea la librería matplotlib y por lo tanto el interprete de Python 3.x.x. En caso de no tener dicha librería se debe instalar mediante los siguientes comandos en la terminal:
   ```
-<!--Si se requiere ayuda y saldrá un mensaje como este:
-```
-chat_server distributes encrypted chat messages between connected clients.
-
-Usage:
-  chat_server [-d] <port>
-  chat_server -h
-
-Options:
-  -h             Help, show this screen.
-  -d             Daemon mode.
-```
-Si se desea que se levante el servidor se usa:                                                                                         
-```
-./chat_server 8080
-```
-Si se desea que el servidor está ejecutandose en segundo plano se introduce:                                                         
-```
-./chat_server -d 8080
-```
-Para conocer si el servidor está corriendo en el segundo plano, se recomienda el siguiente comando:                   
-```
-lsof -i                                                                              
-```
-Para acabar con el proceso del servidor(siempre y cuando esté en segundo plano) se introduce el comando:
-```
-sudo kill <pid_del_proceso>
-```
-En cuanto al **cliente**, se requiere dos o más clientes se introduce los siguientes comandos:                                                                 
-```
-./chat_client –h                                                                                                                 
-```
-Si se requiere ayuda, se mostrará el siguiente mensaje:
-```
-./chat_client –h
-chat_client connects to a remote chat_server service, allows the user to send messages to the chat group and displays chat messages from other clients.
-
-Usage:
-  chat_client –u <user> -p <password> <ip> <port>
-  chat_client -h
-
-Options:
-  -h             Help, show this screen.
-  -u             Specify the username.
-  -p             Specify the password.
-```
-Para que un usuario se conecte se usa:                                                                                                 
-```
-./chat_client -u <nombre_usuario> -p <contraseña> <ip> <puerto>
-```
-Cada vez que un cliente se conecta se anuncia esa notificación en los usuarios ya conectados -->                                            
+  python3 -m pip install -U pip
+  python3 -m pip install -U matplotlib
+  ```
+  Una vez instalada la librería correspondiente y constar con Python3 el comando de ejecución de **ploter.py** es el siguiente:
+  ```
+   python3 ploter.py
+  ```
+  Las gráficas generadas por este programa tienen el mismo nombre que los archivos que alimentan la data de gráficación, salvo que llevan la extención **.jpeg**. Algunas de las imágenes generadas por este programa lucen de la siguiente manera:
+  
+                                             
 
 ## Realizador por:                                                                                                    
 * Diego Muñoz     
