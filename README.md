@@ -79,6 +79,54 @@ El cual generara 3 archivos ejecutables correspondientes a sus archivos.c dentro
   Average turnaround time = 7.20
   Average normalized turnaround time = 1.59
   Average waiting time = 3.20
+  
+* El tercer programa denominado **schedstadistcs** consiste en un generador de datos estadísticos, correspondientes al análisis de procesos, como:
+  * Tiempo promedio de respuesta de procesos por agrupacón de busrt time.
+  * Tiempo promedio de respuesta normalizado de procesos por agrupación de burst time.
+  * Tiempo promedio de espera de procesos por agrupación de burst time.
+  Estos datos los genera en base a los algoritmos de agendamiento de procesos antes mencionado, específicamente emplea los algoritmos de RR1, RR4, FCFS y SJF apropiativo, por lo   que ejecuta los 4 algoritmos de agendamiento de manera concurrente, una posible salida por consola respecto al estado del programa sería la siguiente:
+  ```
+  procesando fcfs ...
+  procesando jfc ... 
+  procesando rr1 ...
+  procesando rr4 ...
+  procesando rr1 ...
+  procesamiento finalizado (rr1)
+  ```
+  <!--Este programa consta principalmente de 2 paramentros obligatorios en cualquier ejecución que son:
+  * **filename:** es una cadena de cácteres que le indica al programa que dataset de prueba usará para su simulación.
+  * **algoritmo:** es una cadena de cácteres que le indica al programa que algoritmo de agendamiento de procesos usar.
+  El tercer párametro es obligatorio, si y solo si, el algoritmo de agendamiento escogido es Round Robin:
+  * **q:** es un número entero que le indica al programa el valor que tendrá el quantum al momento de realizar la simulación.
+  Un ejemplo por cada uno de las posibilidades de ejecución del programa sería:
+   ```
+  ./build/schedgen schedstimes.dat fcfs                                                                                                       
+  ```
+   ```
+  ./build/schedgen schedstimes.dat sjf                                                                                                              
+  ```
+   ```
+  ./build/schedgen schedstimes.dat q 4                                                                                                             
+  ```
+  Y una posible salida para la ejecución de este programa suponiendo que el algoritmo a ejecutar es SJF con el siguiente dataset es:
+  ```
+  0 3
+  2 6 
+  4 4
+  6 5
+  8 2
+  ```
+  ```
+  1: runs 0-3 -> end = 3, (arr = 0), turn = 3, (burst = 3), wait = 0
+  2: runs 3-4
+  3: runs 4-8 -> end = 8, (arr = 4), turn = 4, (burst = 4), wait = 0
+  5: runs 8-10 -> end = 10, (arr = 8), turn = 2, (burst = 2), wait = 0
+  2: runs 10-15 -> end= 15, (arr = 2), turn = 13, (burst = 6), wait = 7
+  4: runs 15-20 -> end= 20, (arr = 6), turn = 14, (burst = 5), wait = 9 
+  
+  Average turnaround time = 7.20
+  Average normalized turnaround time = 1.59
+  Average waiting time = 3.20
   ```
 <!--Si se requiere ayuda y saldrá un mensaje como este:
 ```
