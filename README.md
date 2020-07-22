@@ -3,7 +3,7 @@ Este proyecto consiste en una serie de programas que tienen como fin llevar a ca
 
 * ./schedgen (scheduler generator): programa cuyo fin es generar un archivo con los datos necesarios (time arrive, time burst) para llevar a cabo la simulación.
 * ./schedsim (scheduler simulator): es el motor de simulación, este programa realiza todo el proceso de encolamiento e interrución de procesos y muestra como va la ejecución de manera detallada, utiliza programación en paralelo mediante el uso de hilos.
-* ./schedstadistcs (scheduler stadistics): usa el motor de antes mencionado pero a diferencia del anterior este programa ejecuta 4 simulaciones al mismo tiempo con los algoritmos de rr1, rr4, sfj, fcfs; por lo que usa programación concurrente mediante procesos y como resultado genera 3 archivos con datos estadísticos para su posterior procesamiento.
+* ./schedstats (scheduler stadistics): usa el motor de antes mencionado pero a diferencia del anterior este programa ejecuta 4 simulaciones al mismo tiempo con los algoritmos de rr1, rr4, sfj, fcfs; por lo que usa programación concurrente mediante procesos y como resultado genera 3 archivos con datos estadísticos para su posterior procesamiento.
 * ./plotter: este programa toma los archivos del programa anterior para realizar su procesamiento y graficación mediante la librería matplotlib.
 
 En la siguiente sección se explicará más a detalle cada uno de los programas mencionados.
@@ -93,6 +93,26 @@ El cual generara 3 archivos ejecutables correspondientes a sus archivos.c dentro
   procesando rr1 ...
   procesamiento finalizado (rr1)
   ```
+  Para su ejecución es necesario escribir el siguiente comando:
+  ```
+  ./build/schedstats filename
+  ```
+  Que recibe únicamente un argumento:
+  * **filename:** es una cadena de cácteres que le indica al programa que dataset de prueba usará para su simulación y posterior generación de 3 archivos cada uno correspondiente a la información estadística antes mencionada, cada uno de estos archivos sigue el siguiente formato:
+  ```
+  1 2 3 4 9 11
+  0.1 0.8 0.9 0.15 0.2 
+  0.8 0.7 0.10 0.8 0.3
+  0.8 0.56 0.15 0.24 0.52
+  0.17 0.12 0.25 0.36 0.8
+  ```
+  Donde:
+  * La primera fila corresponde al burst time agrupado ascendente de todos los procesos analizados.
+  * La segunda fila corresponde a los datos relacionados a alguno de los indicadores estadísticos correspondientes al algoritmo de FCFS vinculados a la agrupación de procesos de la primera fila.
+  * La tercera fila corresponde a los datos relacionados a alguno de los indicadores estadísticos correspondientes al algoritmo de RR1 vinculados a la agrupación de procesos de la primera fila.
+  * La cuarta fila corresponde a los datos relacionados a alguno de los indicadores estadísticos correspondientes al algoritmo de RR4 vinculados a la agrupación de procesos de la primera fila.
+  * La quinta fila corresponde a los datos relacionados a alguno de los indicadores estadísticos correspondientes al algoritmo de SJF vinculados a la agrupación de procesos de la primera fila.
+   
   <!--Este programa consta principalmente de 2 paramentros obligatorios en cualquier ejecución que son:
   * **filename:** es una cadena de cácteres que le indica al programa que dataset de prueba usará para su simulación.
   * **algoritmo:** es una cadena de cácteres que le indica al programa que algoritmo de agendamiento de procesos usar.
