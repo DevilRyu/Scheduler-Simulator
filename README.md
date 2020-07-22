@@ -35,7 +35,31 @@ El cual generara 3 archivos ejecutables correspondientes a sus archivos.c dentro
   * **d:** es un número entero que le indica al programa cuantos datos de prueba debe generar.
   * **f1:** es un número decimal que le indica al programa la frecuencia con la que los datos de prueba(procesos) arribaran.
   * **f2:** es un número decimal que le indica al programa la distribución del burst time de los procesos.
-  * **filename:** es una cadena de caácteres que le indica al programa como se llamará el archivo que contenga los datos de prueba.
+  * **filename:** es una cadena de cácteres que le indica al programa como se llamará el archivo que contenga los datos de prueba.
+  Un ejemplo de su uso sería:
+  ```
+  ./build/schedgen 100 0.5 0.2 schedstimes.dat                                                                                                               
+  ```
+  
+* El segundo programa denominado **schedsim** consiste en un motor de simulación que tiene 3 funcionalidades dependiendo de los parametros de entrada que recibe por consola este simulador, consta de 3 algortimos que son FCFS, RR y SJF apropiativos, el comando para ejecutar sus diferentes funcionalidades es:
+  ```
+  ./build/schedsim filename algoritmo [q]                                                                                                              
+  ```
+  Este programa consta principalmente de 2 paramentros obligatorios en cualquier ejecución que son:
+  * **filename:** es una cadena de cácteres que le indica al programa que dataset de prueba usará para su simulación.
+  * **algoritmo:** es una cadena de cácteres que le indica al programa que algoritmo de agendamiento de procesos usar.
+  El tercer párametro es obligatorio, si y solo si, el algoritmo de agendamiento escogido es Round Robin:
+  * **q:** es un número entero que le indica al programa el valor que tendrá el quantum al momento de realizar la simulación.
+  Un ejemplo por cada uno de las posibilidades de ejecución del programa sería:
+   ```
+  ./build/schedgen schedstimes.dat fcfs                                                                                                       
+  ```
+   ```
+  ./build/schedgen schedstimes.dat sjf                                                                                                              
+  ```
+   ```
+  ./build/schedgen schedstimes.dat q 4                                                                                                             
+  ```
   
 <!--Si se requiere ayuda y saldrá un mensaje como este:
 ```
