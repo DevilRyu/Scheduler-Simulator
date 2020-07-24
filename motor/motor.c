@@ -1372,7 +1372,6 @@ void crearArchivos(){
 
 void leerArchivo2(char *filename){
 
-	printf("%s\n",filename);
 	fp = fopen(filename, "r");
 	if (fp == NULL)
 	{

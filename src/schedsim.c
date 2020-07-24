@@ -15,12 +15,12 @@ int main(int argc, char **argv)
 	
 	if(argc<3||argc>5){
 		fprintf(stderr, "Ejecución incorrecta del programa schedsim\n");
-			fprintf(stderr, "Uso:\n ./build/schedsim filename algoritmo [q]\n ");
-			fprintf(stderr, "Opciones:\n");
-			fprintf(stderr," filename\t\tNombre del archivo que el programa usará para su simulación.\n");
-			fprintf(stderr," algoritmo\t\tIndica al programa que algoritmo de agendamiento de procesos usar.\n");
-			fprintf(stderr," q\t\tParametro obligatorio, si y solo si el algoritmo es RR.Valor entero que indica al programa el valor que tendrá el quantum al momento de realizar la simulación.\n");
-			exit(-1);
+		fprintf(stderr, "Uso:\n ./build/schedsim filename algoritmo [q]\n ");
+		fprintf(stderr, "Opciones:\n");
+		fprintf(stderr," \tfilename: Nombre del archivo que el programa usará para su simulación.\n");
+		fprintf(stderr," \talgoritmo: Indica al programa que algoritmo de agendamiento de procesos usar.\n");
+		fprintf(stderr," \tq: Parametro obligatorio, si y solo si el algoritmo es RR.Valor entero que indica al programa el valor que tendrá el quantum al momento de realizar la simulación.\n");
+		exit(-1);
 	}else{
 		if(argc == 4){
 			int quantum = 0 ;
@@ -29,18 +29,18 @@ int main(int argc, char **argv)
 				fprintf(stderr, "Ejecución incorrecta del programa schedsim\n");
 				fprintf(stderr, "Uso:\n ./build/schedsim filename algoritmo [q]\n ");
 				fprintf(stderr, "Opciones:\n");
-				fprintf(stderr," filename\t\tNombre del archivo que el programa usará para su simulación.\n");
-				fprintf(stderr," algoritmo\t\tIndica al programa que algoritmo de agendamiento de procesos usar.\n");
-				fprintf(stderr," q\t\tParametro obligatorio, si y solo si el algoritmo es RR.Valor entero que indica al programa el valor que tendrá el quantum al momento de realizar la simulación.\n");
+				fprintf(stderr," \tfilename: Nombre del archivo que el programa usará para su simulación.\n");
+				fprintf(stderr," \talgoritmo: Indica al programa que algoritmo de agendamiento de procesos usar.\n");
+				fprintf(stderr," \tq: Parametro obligatorio, si y solo si el algoritmo es RR.Valor entero que indica al programa el valor que tendrá el quantum al momento de realizar la simulación.\n");
 				exit(-1);
 			}else{
 				if(sscanf(argv[3], "%d",&quantum) != 1) {
     					fprintf(stderr, "Ejecución incorrecta del programa schedsim\n");
 					fprintf(stderr, "Uso:\n ./build/schedsim filename algoritmo [q]\n ");
 					fprintf(stderr, "Opciones:\n");
-					fprintf(stderr," filename\t\tNombre del archivo que el programa usará para su simulación.\n");
-					fprintf(stderr," algoritmo\t\tIndica al programa que algoritmo de agendamiento de procesos usar.\n");
-					fprintf(stderr," q\t\tParametro obligatorio, si y solo si el algoritmo es RR.Valor entero que indica al programa el valor que tendrá el quantum al momento de realizar la simulación.\n");
+					fprintf(stderr," \tfilename: Nombre del archivo que el programa usará para su simulación.\n");
+					fprintf(stderr," \talgoritmo: Indica al programa que algoritmo de agendamiento de procesos usar.\n");
+					fprintf(stderr," \tq: Parametro obligatorio, si y solo si el algoritmo es RR.Valor entero que indica al programa el valor que tendrá el quantum al momento de realizar la simulación.\n");
 					exit(-1);
 				}
 
@@ -52,9 +52,9 @@ int main(int argc, char **argv)
 				fprintf(stderr, "Ejecución incorrecta del programa schedsim\n");
 				fprintf(stderr, "Uso:\n ./build/schedsim filename algoritmo [q]\n ");
 				fprintf(stderr, "Opciones:\n");
-				fprintf(stderr," filename\t\tNombre del archivo que el programa usará para su simulación.\n");
-				fprintf(stderr," algoritmo\t\tIndica al programa que algoritmo de agendamiento de procesos usar.\n");
-				fprintf(stderr," q\t\tParametro obligatorio, si y solo si el algoritmo es RR.Valor entero que indica al programa el valor que tendrá el quantum al momento de realizar la simulación.\n");
+				fprintf(stderr," \tfilename: Nombre del archivo que el programa usará para su simulación.\n");
+				fprintf(stderr," \talgoritmo: Indica al programa que algoritmo de agendamiento de procesos usar.\n");
+				fprintf(stderr," \tq: Parametro obligatorio, si y solo si el algoritmo es RR.Valor entero que indica al programa el valor que tendrá el quantum al momento de realizar la simulación.\n");
 				exit(-1);
 			}else{
 				

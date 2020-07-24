@@ -15,9 +15,9 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Ejecución incorrecta del programa schedgen\n");
 		fprintf(stderr, "Uso:\n ./build/schedgen d f1 f2 filename\n ");
 		fprintf(stderr, "Opciones:\n");
-		fprintf(stderr," d\t\tNúmero de datos de prueba debe generar.\n");
-		fprintf(stderr," f1\t\tFrecuencia con la que los datos de prueba(procesos) arribaran\n");
-		fprintf(stderr," f2\t\tNombre del archivo que contendrá los datos de prueba\n");
+		fprintf(stderr," \td: Número de datos de prueba debe generar.\n");
+		fprintf(stderr," \tf: Frecuencia con la que los datos de prueba(procesos) arribaran\n");
+		fprintf(stderr," \tf2: Nombre del archivo que contendrá los datos de prueba\n");
 		exit(-1);
 	}else{
 		//validaciones para tipos de argumento valido
@@ -29,10 +29,9 @@ int main(int argc, char **argv)
 			fprintf(stderr, "Ejecución incorrecta del programa schedgen\n");
 			fprintf(stderr, "Uso:\n ./build/schedgen d f1 f2 filename\n ");
 			fprintf(stderr, "Opciones:\n");
-			fprintf(stderr," d\t\tNúmero de datos de prueba debe generar.\n");
-			fprintf(stderr," f1\t\tFrecuencia con la que los datos de prueba(procesos) arribaran\n");
-			fprintf(stderr," f2\t\tDistribución del burst time de los procesos\n");
-			fprintf(stderr," filename\t\tNombre del archivo que contendrá los datos de prueba\n");;
+			fprintf(stderr," \td: Número de datos de prueba debe generar.\n");
+			fprintf(stderr," \tf: Frecuencia con la que los datos de prueba(procesos) arribaran\n");
+			fprintf(stderr," \tf2: Nombre del archivo que contendrá los datos de prueba\n");
 			exit(-1);
 
 		}
@@ -41,10 +40,9 @@ int main(int argc, char **argv)
 			fprintf(stderr, "Ejecución incorrecta del programa schedgen\n");
 			fprintf(stderr, "Uso:\n ./build/schedgen d f1 f2 filename\n ");
 			fprintf(stderr, "Opciones:\n");
-			fprintf(stderr," d\t\tNúmero de datos de prueba debe generar.\n");
-			fprintf(stderr," f1\t\tFrecuencia con la que los datos de prueba(procesos) arribaran\n");
-			fprintf(stderr," f2\t\tDistribución del burst time de los procesos\n");
-			fprintf(stderr," filename\t\tNombre del archivo que contendrá los datos de prueba\n");
+			fprintf(stderr," \td: Número de datos de prueba debe generar.\n");
+			fprintf(stderr," \tf: Frecuencia con la que los datos de prueba(procesos) arribaran\n");
+			fprintf(stderr," \tf2: Nombre del archivo que contendrá los datos de prueba\n");
 			exit(-1);			
 			
 		}
@@ -53,10 +51,9 @@ int main(int argc, char **argv)
 			fprintf(stderr, "Ejecución incorrecta del programa schedgen\n");
 			fprintf(stderr, "Uso:\n ./build/schedgen d f1 f2 filename\n ");
 			fprintf(stderr, "Opciones:\n");
-			fprintf(stderr," d\t\tNúmero de datos de prueba debe generar.\n");
-			fprintf(stderr," f1\t\tFrecuencia con la que los datos de prueba(procesos) arribaran\n");
-			fprintf(stderr," f2\t\tDistribución del burst time de los procesos\n");
-			fprintf(stderr," filename\t\tNombre del archivo que contendrá los datos de prueba\n");
+			fprintf(stderr," \td: Número de datos de prueba debe generar.\n");
+			fprintf(stderr," \tf: Frecuencia con la que los datos de prueba(procesos) arribaran\n");
+			fprintf(stderr," \tf2: Nombre del archivo que contendrá los datos de prueba\n");
 			exit(-1);
 
 		}
