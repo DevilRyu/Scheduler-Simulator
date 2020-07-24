@@ -1,3 +1,5 @@
+Visitar el repositorio de GitHub dado a continuación para una mejor visualización de la documentación del proyecto:
+* https://github.com/DevilRyu/Scheduler-Simulator
 # Scheduler-Simulator
 Este proyecto consiste en una serie de programas que tienen como fin llevar a cabo una simulación de como es el agendamiento de procesos en un computador, los algoritmos de agendamiento usados fueron: FCFS, SJF, RR. Y los programas implementados son:
 
@@ -6,9 +8,13 @@ Este proyecto consiste en una serie de programas que tienen como fin llevar a ca
 * ./schedstats (scheduler stadistics): usa el motor de antes mencionado pero a diferencia del anterior este programa ejecuta 4 simulaciones al mismo tiempo con los algoritmos de rr1, rr4, sfj, fcfs; por lo que usa programación concurrente mediante procesos y como resultado genera 3 archivos con datos estadísticos para su posterior procesamiento.
 * ./ploter.py: este programa toma los archivos del programa anterior para realizar su procesamiento y graficación mediante la librería matplotlib.
 
+Respecto a la organización de directorios:
+* src: contiene el código fuente de cada uno de los programas antes mencionados (schedgen.c, schedsim.c, schedstats.c, ploter.py)
+* motor: contiene el motor principal para los programas de simulación y generación de resultados (schedsim.c, schedstats.c), esta compuesto por dos archivos: motor.c y motor.h
+* resourcesGH: únicamente contiene imagénes generadas por ploter.py que son usadas para mostrar en el repositorio de GitHub.
+* result: este directorio es muy importante debido a que es donde irán todos los archivos e imágenes generadas por los distintos programas, por lo tanto se debe evitar eliminarla.
+* build: este directorio no se encuntra en la estructura básica de organicación del proyecto debido a que se genera una vez compilemos nuestro poyecto mediante el comando **make** y es donde se alojaran los ejecutables de los archivos .c.
 En la siguiente sección se explicará más a detalle cada uno de los programas mencionados.
-
-
 ## Modo de uso y compilación
 Para poder compilar los programas realizados en C es necesario introducir en la terminal el siguiente comando:                                                       
 ```
@@ -124,7 +130,7 @@ El cual generara 3 archivos ejecutables correspondientes a sus archivos.c dentro
   ```
   Una vez instalada la librería correspondiente y constar con Python3 el comando de ejecución de **ploter.py** es el siguiente:
   ```
-   python3 ploter.py
+   python3 src/ploter.py
   ```
   Las gráficas generadas por este programa tienen el mismo nombre que los archivos que alimentan la data de gráficación, salvo que llevan la extención **.jpeg**. Algunas de las imágenes generadas por este programa lucen de la siguiente manera:
   * **Tiempos de retorno vs Burst time de procesos agrupados**
@@ -133,6 +139,14 @@ El cual generara 3 archivos ejecutables correspondientes a sus archivos.c dentro
   ![Tiempos de retorno normalizados vs Burst time de procesos agrupados](https://github.com/DevilRyu/Scheduler-Simulator/blob/master/resourcesGH/schednturns.jpeg)
   * **Tiempos de espera vs Burst time de procesos agrupados**
   ![Tiempos de espera vs Burst time de procesos agrupados](https://github.com/DevilRyu/Scheduler-Simulator/blob/master/resourcesGH/schedwaits.jpeg)
+  
+## Consideraciones:
+- No eliminar el directorio **result** si es que se desea ejecutar los programas debido a que aquí es donde se alojan los resultados de los archivos.
+- Tratar de llevar a cabo la ejecución de los programas secuencialmente (schedgen, schedsim, schedstats, ploter.py) debido a que si analizamos el flujo de ejecución del proyecto la salida de un programa puede servir como entrada del siguiente.
+- El programa **schedsim**  esta hecho con hilos siguiendo un patrón productor-consumidor por lo que se hace uso de mutex y variables de condición, es por esto que se requiere un control de los items producidos por el productor para que el consumidor no se vea en la situación de consumir items no creados, por lo tanto si se revisa el código fuente de motor.c se notará que se duerme al proceso por 1 segundo para poder evitar esta condición en especial al comienzo del programa.
+- Si si quisiera acelerar la ejecución del programa, podriá dormirse al proceso por menos tiempo, sin embargo considere que en ese caso puede llegarse a una condición de **deadlock** debido que a pesar de que esta es una simulación de un agendador de procesos, no deja de ser otro programa que dene ser administrado por el sistema operativo y su propio agendador de proceso. Por lo que para el obtener el mejor rendimiento del programa se recomiendo dormir los procesos por **1 segundo**
+- El programa **schedstats** usa programación concurrente debido a que usa varios procesos para ejecutar los diferente algoritmos de agendamientos, es por ello que se ve ligado también a la consideración anterior.
+- En caso de que desee acelerar la ejecución durmiendo por menos tiempo los procesos y se llega a un deadlock re-ejecutar el programa, de este modo el agendador del Sistema Operativo puede que lo encole de forma diferente pudiendo llegar a una ejecución óptima.
 
 ## Realizador por:                                                                                                    
 * Diego Muñoz     
