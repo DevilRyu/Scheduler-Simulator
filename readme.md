@@ -89,7 +89,7 @@ El cual generara 3 archivos ejecutables correspondientes a sus archivos.c dentro
   Average normalized turnaround time = 1.59
   Average waiting time = 3.20
   
-* El tercer programa denominado **schedstadistcs** consiste en un generador de datos estadísticos, correspondientes al análisis de procesos, como:
+* El tercer programa denominado **schedstats** consiste en un generador de datos estadísticos, correspondientes al análisis de procesos, como:
   * Tiempo promedio de respuesta de procesos por agrupacón de busrt time.
   * Tiempo promedio de respuesta normalizado de procesos por agrupación de burst time.
   * Tiempo promedio de espera de procesos por agrupación de burst time.
