@@ -7,10 +7,10 @@ schedgen:
 	gcc -o build/schedgen schedgen.c 
 
 schedsim:
-	gcc -o build/schedsim schedsim.c -lpthread
+	gcc -o build/schedsim schedsim.c motor.c -lpthread
 
 schedstats:
-	gcc -o build/schedstats schedstats.c -lpthread
+	gcc -o build/schedstats schedstats.c motor.c -lpthread
 
 clean:
 	 rm build/*
