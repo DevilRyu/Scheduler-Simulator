@@ -16,7 +16,12 @@ int main(int argc, char **argv)
 {
 	
 	if(argc!=2){
-		fprintf(stderr, "El programa funciona sin argumentos o con un solo argumento \n");
+		fprintf(stderr, "Ejecución incorrecta del programa schedstats\n");
+		fprintf(stderr, "Uso:\n ./build/schedsim filename algoritmo [q]\n ");
+		fprintf(stderr, "Opciones:\n");
+		fprintf(stderr," filename\t\tNombre del archivo que el programa usará para su simulación.\n");
+		fprintf(stderr," algoritmo\t\tIndica al programa que algoritmo de agendamiento de procesos usar.\n");
+		fprintf(stderr," q\t\tParametro obligatorio, si y solo si el algoritmo es RR.Valor entero que indica al programa el valor que tendrá el quantum al momento de realizar la simulación.\n");
 		exit(-1);
 	}else{
 		

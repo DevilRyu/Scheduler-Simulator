@@ -563,7 +563,7 @@ void FCFS(char *arg){
 	pthread_create(&tid, NULL, encolador,NULL);
 	char inicio = 1;
 	while(!(ubicacionP == numProcesos && STAILQ_EMPTY(&colaListos) && STAILQ_EMPTY(&colaInterrumpidos) )){
-		sleep(0.5); 
+		sleep(1); 
 		pthread_mutex_lock(&mtx);
 		tiempo++; 
 		pthread_mutex_unlock(&mtx);
