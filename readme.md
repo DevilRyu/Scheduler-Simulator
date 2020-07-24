@@ -1,5 +1,6 @@
 Visitar el repositorio de GitHub dado a continuación para una mejor visualización de la documentación del proyecto:
 * https://github.com/DevilRyu/Scheduler-Simulator
+
 # Scheduler-Simulator
 Este proyecto consiste en una serie de programas que tienen como fin llevar a cabo una simulación de como es el agendamiento de procesos en un computador, los algoritmos de agendamiento usados fueron: FCFS, SJF, RR. Y los programas implementados son:
 
@@ -14,6 +15,8 @@ Respecto a la organización de directorios:
 * resourcesGH: únicamente contiene imagénes generadas por ploter.py que son usadas para mostrar en el repositorio de GitHub.
 * result: este directorio es muy importante debido a que es donde irán todos los archivos e imágenes generadas por los distintos programas, por lo tanto se debe evitar eliminarla.
 * build: este directorio no se encuntra en la estructura básica de organicación del proyecto debido a que se genera una vez compilemos nuestro poyecto mediante el comando **make** y es donde se alojaran los ejecutables de los archivos .c.
+
+Cabe decir que este proyecto fue realizado en una máquina virtual con sistema operativo **Ubuntu 18.04.4 LTS** con Kernel: **Linux 5.4.0-42-generic** y arquitectura **x86-64**.
 En la siguiente sección se explicará más a detalle cada uno de los programas mencionados.
 ## Modo de uso y compilación
 Para poder compilar los programas realizados en C es necesario introducir en la terminal el siguiente comando:                                                       
