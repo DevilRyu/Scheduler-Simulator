@@ -468,7 +468,9 @@ void RR(char *arg, int arg2){
 	int quantum = 0 ;
 	char filename[bufferLength] ;
 	strcpy(filename,arg);
-	leerArchivo(filename);
+	char folder[50] = "result/";
+	strcat(folder, filename);
+	leerArchivo(folder);
 	fprintf(stdout,"RR\n");
 	printf("\n");
 	int num = arg2;
@@ -546,7 +548,9 @@ void RR(char *arg, int arg2){
 void FCFS(char *arg){
 	char filename[bufferLength] ;
 	strcpy(filename,arg);
-	leerArchivo(filename);
+	char folder[50] = "result/";
+	strcat(folder, filename);
+	leerArchivo(folder);
 	fprintf(stdout,"FCFS\n");
 	printf("\n");
 	pthread_t tid;
@@ -600,7 +604,9 @@ void FCFS(char *arg){
 void SJF(char *arg){
 	char filename[bufferLength] ;
 	strcpy(filename,arg);
-	leerArchivo(filename);
+	char folder[50] = "result/";
+	strcat(folder, filename);
+	leerArchivo(folder);
 	fprintf(stdout,"SJF\n");
 	printf("\n");
 	pthread_t tid;
@@ -1035,9 +1041,10 @@ void escribirTiemposRetorno(int numLinea1, char *filenameTemp){
 	char buffer[1000];
 	char newline[1000];
 	int count;
-
-
-	fPtr  = fopen(path, "r");
+	char folder[50] = "result/";
+	strcat(folder, path);
+	
+	fPtr  = fopen(folder, "r");
 	fTemp = fopen(filenameTemp, "w"); 
 
 	if (fPtr == NULL || fTemp == NULL)
@@ -1074,7 +1081,7 @@ void escribirTiemposRetorno(int numLinea1, char *filenameTemp){
 	fclose(fTemp);
 
 	
-	fPtr  = fopen(path, "w");
+	fPtr  = fopen(folder, "w");
 	fTemp = fopen(filenameTemp, "r"); //darle un temporal a cada uno
 
 	if (fPtr == NULL || fTemp == NULL)
@@ -1112,9 +1119,10 @@ void escribirTiemposRetornoNormalizados(int numLinea1, char *filenameTemp){
 	char buffer[1000];
 	char newline[1000];
 	int count;
-
-
-	fPtr  = fopen(path, "r");
+	char folder[50] = "result/";
+	strcat(folder, path);
+	
+	fPtr  = fopen(folder, "r");
 	fTemp = fopen(filenameTemp, "w"); 
 
 	if (fPtr == NULL || fTemp == NULL)
@@ -1152,7 +1160,7 @@ void escribirTiemposRetornoNormalizados(int numLinea1, char *filenameTemp){
 	fclose(fTemp);
 
 	
-	fPtr  = fopen(path, "w");
+	fPtr  = fopen(folder, "w");
 	fTemp = fopen(filenameTemp, "r"); //darle un temporal a cada uno
 
 	if (fPtr == NULL || fTemp == NULL)
@@ -1193,9 +1201,10 @@ void escribirTiemposEspera(int numLinea1, char *filenameTemp){
 	char buffer[1000];
 	char newline[1000];
 	int count;
-
-
-	fPtr  = fopen(path, "r");
+	char folder[50] = "result/";
+	strcat(folder, path);
+	
+	fPtr  = fopen(folder, "r");
 	fTemp = fopen(filenameTemp, "w"); 
 
 	if (fPtr == NULL || fTemp == NULL)
@@ -1233,7 +1242,7 @@ void escribirTiemposEspera(int numLinea1, char *filenameTemp){
 	fclose(fTemp);
 
 	
-	fPtr  = fopen(path, "w");
+	fPtr  = fopen(folder, "w");
 	fTemp = fopen(filenameTemp, "r"); //darle un temporal a cada uno
 
 	if (fPtr == NULL || fTemp == NULL)
@@ -1307,7 +1316,7 @@ void seleccionarAlgortmo(int algoritmo){
 
 void crearArchivos(){
 	FILE *fw;
-	fw = fopen("schedturns.dat", "w");
+	fw = fopen("result/schedturns.dat", "w");
 	
 	for(int i = 0;i<250;i++){
 
@@ -1325,7 +1334,7 @@ void crearArchivos(){
 	fprintf (fw, "%d\n",0);
 	fclose(fw);
 
-	fw = fopen("schednturns.dat", "w");
+	fw = fopen("result/schednturns.dat", "w");
 	for(int i = 0;i<250;i++){
 
 		
@@ -1342,7 +1351,7 @@ void crearArchivos(){
 	fprintf (fw, "%d\n",0);
 	fclose(fw);
 
-	fw = fopen("schedwaits.dat", "w");
+	fw = fopen("result/schedwaits.dat", "w");
 	for(int i = 0;i<250;i++){
 
 		
@@ -1363,6 +1372,7 @@ void crearArchivos(){
 
 void leerArchivo2(char *filename){
 
+	printf("%s\n",filename);
 	fp = fopen(filename, "r");
 	if (fp == NULL)
 	{

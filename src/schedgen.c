@@ -40,7 +40,9 @@ int main(int argc, char **argv)
 		char filename[50];
 		strcpy(filename, argv[4]);
 		//strcat(filename, ".txt");
-		fp = fopen (filename,"w");
+		char folder[50] = "result/";
+		strcat(folder,filename);
+		fp = fopen (folder,"w");
 		int ta=0;
 		int i = 0;
 		

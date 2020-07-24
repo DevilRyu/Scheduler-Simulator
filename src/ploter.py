@@ -10,7 +10,7 @@ def graficador(filename, ejey):
     y3 = []
     y4 = []
 
-    f = open(filename+".dat", "r")
+    f = open("result/"+filename+".dat", "r")
 
     for i in range(5):
         if i == 0:
@@ -41,7 +41,7 @@ def graficador(filename, ejey):
     plt.xlabel("Burst Time")
     plt.ylabel(ejey)
     plt.legend(['FCFS', 'RR1', 'RR4', 'SJF'])
-    plt.savefig(filename+".jpeg", format="jpeg",bbox_inches='tight')
+    plt.savefig("result/"+filename+".jpeg", format="jpeg",bbox_inches='tight')
     plt.close()
 
 

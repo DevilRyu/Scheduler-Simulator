@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <ctype.h>
 #include <sys/queue.h> 
-#include "motor.h"
+#include "../motor/motor.h"
 
 
 int main(int argc, char **argv)

@@ -8,7 +8,7 @@
 #include <ctype.h>
 #include <sys/queue.h> 
 #include<sys/wait.h> 
-#include "motor.h"
+#include "../motor/motor.h"
 
 //char timeBurst[250];
 
@@ -22,7 +22,9 @@ int main(int argc, char **argv)
 		
 		char filename[255] ;
 		strcpy(filename,argv[1]);
-		leerArchivo2(filename);
+		char folder[50] = "result/";
+		strcat(folder, filename);
+		leerArchivo2(folder);
 		
 		crearArchivos();
 		
